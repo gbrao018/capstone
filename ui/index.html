@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  top:0;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: green;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.active {
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+    right-margin: 20px;
+	top-margin:20x;
+	display: flex;
+  align-items: center;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 100px;
+    border: 2px solid yellow;
+    background-color: green;
+}  
+
+.resnet {
+    width: 100%;
+    float: left;
+    padding: 20px;
+    border: 12px solid white;
+    background-color: rgb(245,245,245);
+	text-align: center;
+	margin-bottom:20px;
+}  
+
+.mobilenet {
+    width: 100%;
+    float: left;
+    padding: 20px;
+    border: 12px solid white;
+    background-color: rgb(245,245,245);
+	text-align: center;
+	margin-bottom:20px;
+	
+}  
+
+.mobilenet1 {
+    flex: 1;
+    border: 2px solid white;
+	background-color: blue;
+    margin-right:20px;
+    margin-left:20px;
+    margin-top:20px;
+	margin-bottom:20px;
+    text-align:center;
+}  
+
+.dlib {
+    flex: 1;
+    border: 2px solid white;
+	background-color: rgb(192,192,192);
+    margin-right:20px;
+    margin-left:20px;
+    margin-top:20px;
+    text-align:center;
+	margin-bottom:20px;
+}  
+
+.flex-container {
+    display: flex;
+    margin-right:20px;
+    margin-left:20px;
+    margin-top:40px;
+    
+}
+
+.flex-child {
+    flex: 1;
+    border: 2px solid white;
+	background-color: rgb(192,192,192);
+    margin-right:20px;
+    margin-left:20px;
+    margin-top:20px;
+    text-align:center;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+
+
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+</style>
+<body>
+
+
+<div class="navbar">
+  
+ <div class="dropdown">
+    <button class="dropbtn"  onclick="capstone_classification()"> Capstone Project - Image Classification
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content">
+      <a href="#capstone-classification-train" onclick="capstone_classification_train()"> Upload & Train Data</a>
+	  <a href="#capstone-classification-test" onclick="capstone_classification_test()"> Test </a>
+	  
+    </div>
+	
+	
+  </div>
+  
+  <div class="dropdown">
+ <button class="dropbtn"  onclick="capstone_sentimentanalysis()"> Capstone Project - Sentiment Analysiss
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content">
+      <a href="#capstone-classification-train" onclick="capstone_sentimentanalysis_train()"> Upload & Train Sentiment Analysis</a>
+	  <a href="#capstone-classification-test" onclick="capstone_sentimentanalysis_test()"> Test </a>
+	  
+    </div>
+  </div>
+  
+ 
+</div>
+
+
+<div id="maincontainer" class="flex-child">
+
+
+<div id="capstone_image_classification" class="flex-container">
+
+<div id="capstone_image_classification_train_div" class="resnet">
+<form action="/action_page.php">
+	<img src="https://s3.ap-south-1.amazonaws.com/ganji.facealign/images/resnet34.png" alt="Resnet34" width="10%" height="20%">
+	<h2>Image Classfication Work Flow: Train using Resnet34 on Amazon EC2</h2>
+	
+	 <div>
+  <p>Step#1: Please upload the zipped  image directory with 0,1,2...10</p>
+  <input type="button" id="capstoneImageGenerateTokenBtn" class="button" value="Generate Token">
+
+  <p id="capstone_classification_token"></p>
+	
+  <p>Step#2: Please upload the zipped  image directory with 0,1,2...10</p>
+  <p>Step#3: Please mention the lable names comma seperated..e.g. cat,mat,rat,horse....</p>
+  <p>Step#4: Click the 'Upload & Train' button, you will get a token. Keep it safe.</p>
+  
+  <input type="text"> lables/classes </input>
+  <input type="file" id="capstoneImageTrainUpload" name="capstoneImageFolderZipUpload" class="browseButton"></input>
+  </br></br>
+  <input type="button" id="capstoneImageTrainUploadBtn" class="button" value="Upload & Train">
+  </br>
+  </div>
+  	
+</form>
+</div>
+
+<div id="capstone_image_classification_test_div" class="resnet">
+<form action="/action_page.php">
+	<img src="https://s3.ap-south-1.amazonaws.com/ganji.facealign/images/resnet34.png" alt="Resnet34" width="10%" height="20%">
+	<h2>Image Classfication Test the trained model on Amazon EC2</h2>
+	
+	 <div>
+  <p>Please upload single image for image classification</p>
+  <input type="text" id ="token">  Enter the Token to validate you..</input></br>
+  <input type="file" id="capstoneImageTestUpload" name="capstoneImageTestUpload" class="browseButton">
+  </br></br>
+  <input type="button" id="capstoneImageTestUploadBtn" class="button" value="Test">
+  
+  </div>
+  	
+</form>
+<p id="capstone_classification_result"></p>
+</div>
+
+</div>
+
+<div id="capstone_sentimentanalysis" class="flex-container">
+
+<div id="capstone_sentimentanalysis_train_div" class="resnet">
+<form action="/action_page.php">
+	<h2>Sentiment Analysis Work Flow: Train on Amazon EC2</h2>
+	
+	 <div>
+  <p>Step#1: Please upload the csv data</p>
+  <p>Step#2: Click the 'Upload & Train' button, you will get a token. Keep it safe.</p>
+  
+  <input type="file" id="capstoneSentimentAnalysisTrainUpload" name="capstoneSentimentAnalysisTrainUpload" class="browseButton"></input>
+  </br></br>
+  <input type="button" id="capstoneSentimentAnalysisTrainBtn" class="button" value="Upload & Train">
+  </br>
+  </div>
+  	
+</form>
+<p id="capstone_sentimentanalysis_token"></p>
+</div>
+
+<div id="capstone_sentimentanalysis_test_div" class="resnet">
+<form action="/action_page.php">
+	
+	 <div>
+	 	<h2>Sentiment Analysis Test the Model</h2>
+	<p>Step#1: Enter the Token to validate you..</p>
+  <p>Step#2: Enter the context and click on Analyse button</p>
+  
+  
+  <input type="text" id ="stoken">  Enter the Token to validate</input>
+  </br></br>
+  <input type="text" id ="context"> Enter the Text to Analyse</input>
+  </br></br>
+  <input type="button" id="capstoneSentimentAnalysisTestBtn" class="button" value="Analyse">
+  
+  </div>
+  	
+</form>
+<p id="capstone_sentimentanalysis_result"></p>
+</div>
+
+</div>
+
+
+</div>
+
+
+</body>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="js/upload.js?v=1.5"></script>
+
+</html> 

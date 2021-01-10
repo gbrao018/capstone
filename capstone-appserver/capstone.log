@@ -1,0 +1,82 @@
+*** Starting uWSGI 2.0.19.1 (64bit) on [Sun Jan 10 08:38:59 2021] ***
+compiled with version: 9.3.0 on 02 January 2021 15:32:37
+os: Linux-5.4.0-1029-aws #30-Ubuntu SMP Tue Oct 20 10:06:38 UTC 2020
+nodename: ip-172-31-27-222
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/capstone
+detected binary path: /home/ubuntu/capstone/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 31409
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address capstone.sock fd 3
+Python version: 3.8.5 (default, Jul 28 2020, 12:59:40)  [GCC 9.3.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x559d4acfbee0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437520 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./wsgi.py", line 1, in <module>
+    from capstone import app
+ModuleNotFoundError: No module named 'capstone'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 88539)
+spawned uWSGI worker 1 (pid: 88554, cores: 1)
+spawned uWSGI worker 2 (pid: 88555, cores: 1)
+spawned uWSGI worker 3 (pid: 88556, cores: 1)
+spawned uWSGI worker 4 (pid: 88557, cores: 1)
+spawned uWSGI worker 5 (pid: 88558, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: unix socket capstone.sock removed.
+*** Starting uWSGI 2.0.19.1 (64bit) on [Sun Jan 10 16:06:50 2021] ***
+compiled with version: 9.3.0 on 02 January 2021 15:32:37
+os: Linux-5.4.0-1029-aws #30-Ubuntu SMP Tue Oct 20 10:06:38 UTC 2020
+nodename: ip-172-31-27-222
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/capstone
+detected binary path: /home/ubuntu/capstone/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 31409
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address capstone.sock fd 3
+Python version: 3.8.5 (default, Jul 28 2020, 12:59:40)  [GCC 9.3.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x55aa53c80ee0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437520 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./wsgi.py", line 1, in <module>
+    from capstone import app
+  File "./capstone.py", line 1, in <module>
+    import spacy
+ModuleNotFoundError: No module named 'spacy'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 496)
+spawned uWSGI worker 1 (pid: 566, cores: 1)
+spawned uWSGI worker 2 (pid: 567, cores: 1)
+spawned uWSGI worker 3 (pid: 568, cores: 1)
+spawned uWSGI worker 4 (pid: 569, cores: 1)
+spawned uWSGI worker 5 (pid: 570, cores: 1)
